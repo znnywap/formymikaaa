@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mikaela Ingrid Only</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #fff9c4, #ffd54f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    color: #5c4b00;
+    position: relative;
+}
+
+input {
+    padding: 12px;
+    width: 80%;
+    border-radius: 10px;
+    border: none;
+    margin-top: 15px;
+    font-size: 16px;
+    text-align: center;
+}
+
+button {
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: none;
+    margin-top: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.unlock-btn { background: #fff176; color: #5c4b00; }
+.yes-btn { background: #fbc02d; color: white; }
+.no-btn { background: #aaa; color: white; position: absolute; }
+
+img { width: 100%; border-radius: 20px; margin-bottom: 15px; }
+.hidden { display: none; }
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    width: 85%;
+    max-width: 350px;
+    transition: 0.3s ease;
+    z-index: 20;
+}
+
+.popup.show { transform: translate(-50%, -50%) scale(1); }
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 10;
+}
+
+.overlay.show { display: block; }
+
+.dove {
+    font-size: 38px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    animation: float 2s ease-in-out infinite;
+    z-index: 30;
+}
+
+@keyframes float {
+    0% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-12px); }
+    100% { transform: translateX(-50%) translateY(0); }
+}
+
+.lsm-letter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 85%;
+    max-width: 400px;
+    text-align: center;
+    max-height: 70vh;
+    overflow-y: auto;
+    transition: 0.3s ease;
+    z-index: 40;
+}
+
+.lsm-letter.show { transform: translate(-50%, -50%) scale(1); }
+</style>
+</head>
+
+<body>
+
+<div class="dove" id="dove">🕊️</div>
+
+<div class="glass" id="lockScreen">
+    <h1>For Mikaela Ingrid 💛</h1>
+    <p>Clue: our special day</p>
+    <input type="password" id="passwordInput" placeholder="Enter password">
+    <br>
+    <button class="unlock-btn" onclick="checkPassword()">Unlock</button>
+    <p id="errorMsg" style="font-size:14px;"></p>
+</div>
+
+<div class="glass hidden" id="mainPage">
+    <img src="photo.jpg" alt="Us">
+    <h1 id="questionText"></h1>
+    <button class="yes-btn" id="yesBtn">Yes 💛</button>
+    <button class="no-btn" id="noBtn">No</button>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="popup" id="valPopup">
+    <h2>I Love You So Much 💛</h2>
+    <p>
+        Happy Valentines Day Mika my love,<br>
+        Click the dove 🕊️
+    </p>
+    <img src="ourphoto.jpg" alt="Us" style="width:100%; border-radius:15px; margin:10px 0;">
+</div>
+
+<div class="lsm-letter" id="lsmLetter">
+ <h2>For You Mahal Ko</h2>
+    Ito'y tula para sa pinaka mamahal kong babae sa buong mundo, Mikaela Ingrid ng puso ko. Sana magustuhan mo ang isinulat na liriko, wala nang paligoy-ligoy pa, simulan na natin ’to.<br><br>
+
+Ang buong alpabeto ay iaalay ko sa’yo upang malaman mong mula simula hanggang wakas ikaw ang mahal ko (A–Z).<br><br>
+
+<b>A</b>no ba ang nagawa ko para makuha ang gaya mo? Siguro ay niligtas ko ang mundo sa nakaraang buhay ko. Ayun lang ang tanging dahilan upang biyayaan ako ng gan’to.<br><br>
+
+<b>B</b>awat salita na lumalabas sa’yong bibig sa tenga ko ay musika, parang tinig ng anghel, halatang mabuti ka. Oo, ma-botika kasi ikaw ang medisina sa katawan kong mahina.<br><br>
+<b>C</b>hat mo sa umaga ang una kong tinitignan. Ikaw ang unang pumapasok sa isip, daig pa ang kainan, dahil alam kong busog na ako kapag ikaw ang tinitignan.<br><br>
+
+<b>D</b>umating ka sa buhay ko at twist ay binigay. Akala ko ay magiging single na lang ako habang buhay, pero nagpapasalamat ako sa Diyos dahil ikaw ang ibinigay.<br><br>
+
+<b>E</b>verlasting na pagmamahal ang ibibigay ko sa’yo, dahil ngayong Valentine’s ang regalo mo ay ako. Kasi hindi matutumbasan ng tsokolate at bulaklak ang pagmamahal na dala ko, dahil sweet at mabango ay parehas na ako. Joklang wala na kasi pera baby mo HWHSHHAHAHAHAH.<br><br>
+
+<b>F</b>orever daw ay di totoo sabi ng iba, pero yun ay akala lang nila. Nasasabi lang nila yun kasi di nila ako kilala. Ayun ang advantage mo sa iba, meron kang Raizen na mag-aalaga sa’yo at ako’y di tulad ng iba.<br><br>
+
+<b>G</b>anda mo ang lagi kong nasasabi. Ayan ang lagi kong nasasabi kapag tinitignan ko ang ’yong mata pati labi.<br><br>
+
+<b>H</b>anap-hanap ka sa araw-araw. Ang pagka-miss ko sa’yo ay apaw-apaw, at masaya akong mayabangan ang iba kasi habang sa’yo sila agaw-agaw, ako ’eto pinipili mo araw-araw.<br><br>
+
+<b>I</b> love you, Mikaela Ingrid. Wala na munang bars kasi gusto ko ipaalala ulit na mahal na mahal na mahal kita.<br><br>
+
+<b>J</b>ackpot ang nasa isip ko nung ako ay sinagot mo. Masaya ako dahil sumugal ako sa’yo. Hindi maling desisyon itaya ko ang puso ko dahil panalo naman ako sa pag-aalaga mo.<br><br>
+
+<b>K</b>ulang ang salita sa mundo para ilarawan ang pagmamahal ko. Hindi rin sapat ito para ipaliwanag ang ganda mo. Kaya kahit kulang man, ipaparamdam ko na lang sa’yo at araw-araw kong sasabihin na “ang ganda mo.”<br><br>
+
+<b>L</b>ove, Mahal, Baby, at iba pa sa dami ng mga callsign sa mundo, ang lahat ng yun itatawag ko sa’yo para pag iniwan mo ’ko wala ka matawag sa bago mo.<br><br>
+
+<b>M</b>ahal na mahal kita, Mika, mwhehehe. I love ya.<br><br>
+
+<b>N</b>ever kitang lolokohin, mahal ko. Ikaw ang pipiliin habang humihinga ako, at hindi, hindi ipagpapalit sa sino man kasi walang papantay sa’yo.<br><br>
+
+<b>O</b>ver sa pababy man, sana di ka magsawa. Gusto ng lambing na parang mag-asawa, yung cuddle na malupet hanggang sa mukha natin maghawa.<br><br>
+
+<b>P</b>ano kung mapagod? Ayan ang iyong kinakatakot. Ang sagot ko ay isa lang, ikaw ang aking pahinga, wag ka makakalimot. Kahit pagod na sa lahat, sa’yo pa rin ako uuwi dahil ang wala ka sa tabi ang ayaw kong bangungot.<br><br>
+
+<b>Q</b>uestion mark tingin nila sa’tin noon. Ginulat natin sila nang maging tayo kaya naging exclamation. Di nila alam ang pagtanda na magkasama ang ating destination.<br><br>
+
+<b>R</b>hyme scheme ko man ay walang patutunguhan, sana iyong magustuhan dahil sariling utak at oras ang ginamit sa mga kathang ’yan.<br><br>
+
+<b>S</b>afe ako tuwing ako’y nasa tabi mo. Tila humihinto ang mundo kapag niyayakap mo, at tila bumabalik sa pagkabata pag dumadampi labi mo sa pisngi ko.<br><br>
+
+<b>T</b>itig mo ang nagpapalambot sa matigas na puso ko. Parang laser ang mata mo na tumutunaw sa nagyeyelong ako.<br><br>
+
+<b>U</b>maga, Hapon, at Gabi ikaw ang laman ng utak. Iniisip kung paano ako sa isip mo ay tatatak. Nagpaplano ng bagong pakulo na papatak, na tipong puso mo mapapalakpak.<br><br>
+
+<b>V</b>iolet ang dati kong peyboret pero ngayon ay yellow na, kasi ito ang naaalala ko pag nakatingin sa’yong mata, tila sunset and sunrise na napakaganda. Hinding-hindi ako magsasawang titigan ka.<br><br>
+
+<b>W</b>ala na akong hahanapin pa sa iba kasi lahat nasa’yo na. Kuntento at maligaya ako sa piling mo, aba, at kung maghanap ako ng iba, ang kapal naman ng mukha.<br><br>
+
+<b>X</b> na yan wag na isama bwiset sila GRRAHHHH.<br><br>
+
+<b>Y</b>akap at lambing mo lang ay sapat na para ako’y mapasaya. Di matutumbasan ng kahit anong yaman ang ’yong halaga. Masaya ako dahil sa’kin ka napunta, at ang bonak ng mga dati mo kasi pinakawalan ka pa nila.<br><br>
+
+<b>Z</b>en nga pala na mahal na mahal ka. Sana nagustuhan mo ang sinulat kong tula, at tulad ng Zen, papaniguraduhin kong sa’kin ay payapa ka. Hindi ka sisigawan, sasaktan, at marami pang iba. Demonyo man pangalan ko, pero heaven ang ipaparamdam ko sa’yo. Mahal kita.
+        
+
+<script>
+const PASSWORD = "2526";
+const girlName = "Mika";
+
+document.getElementById("questionText").innerText =
+`Will you be my Valentine, ${girlName}?`;
+
+function checkPassword() {
+    const input = document.getElementById("passwordInput").value;
+    if(input === PASSWORD) {
+        document.getElementById("lockScreen").classList.add("hidden");
+        document.getElementById("mainPage").classList.remove("hidden");
+    } else {
+        document.getElementById("errorMsg").innerText = "Wrong password 🥺";
+    }
+}
+
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const valPopup = document.getElementById("valPopup");
+const overlay = document.getElementById("overlay");
+const dove = document.getElementById("dove");
+const lsmLetter = document.getElementById("lsmLetter");
+
+yesBtn.addEventListener("click", () => {
+    overlay.classList.add("show");
+    valPopup.classList.add("show");
+});
+
+dove.addEventListener("click", () => {
+    if(valPopup.classList.contains("show")) {
+        valPopup.classList.remove("show");
+        overlay.classList.remove("show");
+        lsmLetter.classList.add("show");
+    } else if(lsmLetter.classList.contains("show")) {
+        lsmLetter.classList.remove("show");
+    }
+});
+
+function moveNoButton() {
+    const container = document.getElementById("mainPage");
+    const maxX = container.clientWidth - noBtn.clientWidth - 20;
+    const maxY = container.clientHeight - noBtn.clientHeight - 20;
+    noBtn.style.left = Math.random() * maxX + "px";
+    noBtn.style.top = Math.random() * maxY + "px";
+}
+
+noBtn.addEventListener("mouseover", moveNoButton);
+noBtn.addEventListener("touchstart", moveNoButton);
+noBtn.addEventListener("click", moveNoButton);
+</script>
+
+</body>
+</html>
